@@ -7,11 +7,18 @@
 
 package org.usfirst.frc.team7179.robot;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import edu.wpi.first.wpilibj.XboxController;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	private XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
+	
+	private Hand rightHand = Hand.kRight;
+	 
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
@@ -39,4 +46,16 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
+	
+	public double getLeftSpeed(){
+		return constrain(xboxController.getX(rightHand)-xboxController.getY(rightHand));
+	}
+	public double getRightSpeed(){
+		return constrain(xboxController.getX(rightHand)+xboxController.getY(rightHand));
+	}
+	private double constrain(double value){
+		return Math.max(-1, Math.min(1, value));
+	}
+	
+	
 }
