@@ -32,6 +32,8 @@ public class Robot extends TimedRobot {
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
+	
+	public String gameData;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -70,7 +72,6 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		String gameData;
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
 		if(gameData.charAt(0) == 'L')
 		{
