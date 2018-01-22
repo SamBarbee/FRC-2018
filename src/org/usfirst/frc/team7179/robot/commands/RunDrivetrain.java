@@ -3,8 +3,8 @@ package org.usfirst.frc.team7179.robot.commands;
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Move extends Command {
-	public Move() {
+public class RunDrivetrain extends Command {
+	public RunDrivetrain() {
 		requires(Robot.drive);
 	}
 	@Override
