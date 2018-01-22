@@ -15,7 +15,6 @@ package org.usfirst.frc.team7179.robot;
  */
 public class RobotMap {
 	public static final int PDP_ID = 61;
-	//XBox controller Todo
 	public static final int XBOX_CONTROLLER = 0;
 	
 	//Motors
@@ -23,5 +22,8 @@ public class RobotMap {
 	public static final int DRIVE_LEFT2 = 2;
 	public static final int DRIVE_RIGHT1 = 6;
 	public static final int DRIVE_RIGHT2 = 5;
+	
+	public static final int INTAKE_LEFT = 7;
+	public static final int INTAKE_RIGHT = 7;
 
 }
