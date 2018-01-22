@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
 import org.usfirst.frc.team7179.robot.commands.*;
+import org.usfirst.frc.team7179.robot.commands.Drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 
 /**
@@ -41,7 +42,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		AutonomousChooser.addDefault("Default Auto", new RunDrivetrain());
+		AutonomousChooser.addDefault("Default Auto", new DriveWithJoystick());
 		//chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 	}

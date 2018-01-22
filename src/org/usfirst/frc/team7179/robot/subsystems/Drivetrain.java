@@ -1,7 +1,7 @@
 package org.usfirst.frc.team7179.robot.subsystems;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
-import org.usfirst.frc.team7179.robot.commands.RunDrivetrain;
+import org.usfirst.frc.team7179.robot.commands.Drive.DriveWithJoystick;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -24,7 +24,7 @@ public class Drivetrain extends Subsystem{
 		rightMotor2.follow(rightMotor1);
 	}
 	protected void initDefaultCommand(){
-		setDefaultCommand(new RunDrivetrain());
+		setDefaultCommand(new DriveWithJoystick());
 	}
 	public void setMotors(double left, double right) {
 		leftMotor1.set(ControlMode.PercentOutput, left);

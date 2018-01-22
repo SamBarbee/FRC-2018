@@ -1,10 +1,10 @@
-package org.usfirst.frc.team7179.robot.commands;
+package org.usfirst.frc.team7179.robot.commands.Drive;
 
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class RunDrivetrain extends Command {
-	public RunDrivetrain() {
+public class DriveWithJoystick extends Command {
+	public DriveWithJoystick() {
 		requires(Robot.drivetrain);
 	}
 	@Override
