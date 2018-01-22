@@ -11,16 +11,16 @@ public class RunDrivetrain extends Command {
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.drivetrain.move(Robot.OI.getLeftSpeed(), Robot.OI.getRightSpeed());
+		Robot.drivetrain.setMotors(Robot.OI.getLeftSpeed(), Robot.OI.getRightSpeed());
 	}
 	protected boolean isFinished() {
 		return false;
 	}
 	protected void end() {
-		Robot.drivetrain.move(0, 0);
+		Robot.drivetrain.setMotors(0, 0);
 	}
 	protected void interrupted() {
-		Robot.drivetrain.move(0, 0);
+		Robot.drivetrain.setMotors(0, 0);
 	}
 
 }

@@ -26,7 +26,7 @@ public class Drivetrain extends Subsystem{
 	protected void initDefaultCommand(){
 		setDefaultCommand(new RunDrivetrain());
 	}
-	public void move(double left, double right) {
+	public void setMotors(double left, double right) {
 		leftMotor1.set(ControlMode.PercentOutput, left);
 		rightMotor1.set(ControlMode.PercentOutput, -right);
 	}
