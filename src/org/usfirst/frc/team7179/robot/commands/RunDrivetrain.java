@@ -5,22 +5,22 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class RunDrivetrain extends Command {
 	public RunDrivetrain() {
-		requires(Robot.drive);
+		requires(Robot.drivetrain);
 	}
 	@Override
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.drive.move(Robot.OI.getLeftSpeed(), Robot.OI.getRightSpeed());
+		Robot.drivetrain.move(Robot.OI.getLeftSpeed(), Robot.OI.getRightSpeed());
 	}
 	protected boolean isFinished() {
 		return false;
 	}
 	protected void end() {
-		Robot.drive.move(0, 0);
+		Robot.drivetrain.move(0, 0);
 	}
 	protected void interrupted() {
-		Robot.drive.move(0, 0);
+		Robot.drivetrain.move(0, 0);
 	}
 
 }

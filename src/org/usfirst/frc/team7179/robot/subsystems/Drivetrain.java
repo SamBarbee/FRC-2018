@@ -9,10 +9,10 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class DriveBase extends Subsystem{
+public class Drivetrain extends Subsystem{
 	private TalonSRX leftMotor1, rightMotor1;
 	private VictorSPX leftMotor2, rightMotor2;
-	public DriveBase(){
+	public Drivetrain(){
 		//Create left motors
 		leftMotor1 = new TalonSRX(RobotMap.DRIVE_LEFT1);
 		leftMotor2 = new VictorSPX(RobotMap.DRIVE_LEFT2);
