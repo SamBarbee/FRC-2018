@@ -31,7 +31,6 @@ public class Robot extends TimedRobot {
 	public static final OI OI = new OI();
 
 	Command m_autonomousCommand;
-	SendableChooser<String> startPositionChooser = new SendableChooser<>();
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 
 	/**
@@ -40,15 +39,9 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		startPositionChooser.addDefault("Starting Position", "1");
-		startPositionChooser.addObject("Starting Position", "2");
-		startPositionChooser.addObject("Starting Position", "3");
 		AutonomousChooser.addDefault("Default Auto", new RunDrivetrain());
-		//AutonomousChooser.addObject("My Auto", new MyAutoCommand());
-
-		//m_chooser.addDefault("Default Auto", new RunDrivetrain());
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		//SmartDashboard.putData("Auto mode", m_chooser);
+		//chooser.addObject("My Auto", new MyAutoCommand());
+		SmartDashboard.putData("Auto mode", AutonomousChooser);
 	}
 
 	/**
