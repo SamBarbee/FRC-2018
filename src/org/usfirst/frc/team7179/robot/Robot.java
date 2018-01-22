@@ -28,6 +28,7 @@ import org.usfirst.frc.team7179.robot.subsystems.*;
 public class Robot extends TimedRobot {
 	//Subsystems
 	public static final DriveBase drive = new DriveBase();
+	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final OI OI = new OI();
 
 	Command m_autonomousCommand;
@@ -43,9 +44,12 @@ public class Robot extends TimedRobot {
 		startPositionChooser.addDefault("Starting Position", "1");
 		startPositionChooser.addObject("Starting Position", "2");
 		startPositionChooser.addObject("Starting Position", "3");
-		AutonomousChooser.addDefault("Default Auto", new Move());
-		AutonomousChooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		AutonomousChooser.addDefault("Default Auto", new RunDrivetrain());
+		//AutonomousChooser.addObject("My Auto", new MyAutoCommand());
+
+		//m_chooser.addDefault("Default Auto", new RunDrivetrain());
+		// chooser.addObject("My Auto", new MyAutoCommand());
+		//SmartDashboard.putData("Auto mode", m_chooser);
 	}
 
 	/**
@@ -83,7 +87,7 @@ public class Robot extends TimedRobot {
 			//Put right auto code here
 		}
 		
-		m_autonomousCommand = m_chooser.getSelected();
+		//m_autonomousCommand = m_chooser.getSelected();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
