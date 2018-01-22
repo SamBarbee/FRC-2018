@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team7179.robot;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -30,7 +31,8 @@ public class Robot extends TimedRobot {
 	public static final OI OI = new OI();
 
 	Command m_autonomousCommand;
-	SendableChooser<Command> m_chooser = new SendableChooser<>();
+	SendableChooser<String> startPositionChooser = new SendableChooser<>();
+	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -38,8 +40,11 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		m_chooser.addDefault("Default Auto", new Move());
-		// chooser.addObject("My Auto", new MyAutoCommand());
+		startPositionChooser.addDefault("Starting Position", "1");
+		startPositionChooser.addObject("Starting Position", "2");
+		startPositionChooser.addObject("Starting Position", "3");
+		AutonomousChooser.addDefault("Default Auto", new Move());
+		AutonomousChooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
 
@@ -61,9 +66,7 @@ public class Robot extends TimedRobot {
 	/**
 	 * This autonomous (along with the chooser code above) shows how to select
 	 * between different autonomous modes using the dashboard. The sendable
-	 * chooser code works with the Java SmartDashboard. If you prefer the
-	 * LabVIEW Dashboard, remove all of the chooser code and uncomment the
-	 * getString code to get the auto name from the text box below the Gyro
+	 * chooser code works with the Java SmartDashboard. 
 	 *
 	 * <p>You can add additional auto modes by adding additional commands to the
 	 * chooser code above (like the commented example) or additional comparisons
@@ -71,6 +74,15 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
+		String gameData;
+		gameData = DriverStation.getInstance().getGameSpecificMessage();
+		if(gameData.charAt(0) == 'L')
+		{
+			//Put left auto code here
+		} else {
+			//Put right auto code here
+		}
+		
 		m_autonomousCommand = m_chooser.getSelected();
 
 		/*
