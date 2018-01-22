@@ -27,7 +27,6 @@ import org.usfirst.frc.team7179.robot.subsystems.*;
  */
 public class Robot extends TimedRobot {
 	//Subsystems
-	public static final DriveBase drive = new DriveBase();
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final OI OI = new OI();
 
