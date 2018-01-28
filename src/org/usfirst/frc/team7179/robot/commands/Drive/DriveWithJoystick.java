@@ -11,7 +11,7 @@ public class DriveWithJoystick extends Command {
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.drivetrain.setMotors(Robot.OI.getLeftSpeed(), Robot.OI.getRightSpeed());
+		Robot.drivetrain.setMotors(Robot.OI.getLeftSpeed(), -Robot.OI.getRightSpeed());
 	}
 	protected boolean isFinished() {
 		return false;

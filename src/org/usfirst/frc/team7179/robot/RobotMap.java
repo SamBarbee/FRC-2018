@@ -18,12 +18,14 @@ public class RobotMap {
 	public static final int XBOX_CONTROLLER = 0;
 	
 	//Motors
-	public static final int DRIVE_LEFT1 = 3;
+	public static final int DRIVE_LEFT1 = 1;
 	public static final int DRIVE_LEFT2 = 2;
-	public static final int DRIVE_RIGHT1 = 6;
-	public static final int DRIVE_RIGHT2 = 5;
+	public static final int DRIVE_RIGHT1 = 10;
+	public static final int DRIVE_RIGHT2 = 9;
 	
-	public static final int INTAKE_LEFT = 7;
-	public static final int INTAKE_RIGHT = 7;
-
+//	public static final int INTAKE_LEFT = 7;
+//	public static final int INTAKE_RIGHT = 7;
+//
+//	public static final int SHOOTER_LEFT = 7;
+//	public static final int SHOOTER_RIGHT = 7;
 }
