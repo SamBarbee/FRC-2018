@@ -1,7 +1,7 @@
 package org.usfirst.frc.team7179.robot.subsystems;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
-import org.usfirst.frc.team7179.robot.commands.Drive.DriveWithJoystick;
+import org.usfirst.frc.team7179.robot.commands.DriverControl.DriveWithJoystick;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -13,12 +13,10 @@ public class Drivetrain extends Subsystem{
 	private TalonSRX leftMotor1, rightMotor1;
 	private VictorSPX leftMotor2, rightMotor2;
 	public Drivetrain(){
-		//Create left motors
 		leftMotor1 = new TalonSRX(RobotMap.DRIVE_LEFT1);
 		leftMotor2 = new VictorSPX(RobotMap.DRIVE_LEFT2);
 		leftMotor2.follow(leftMotor1);
 		
-		//Create right motors
 		rightMotor1 = new TalonSRX(RobotMap.DRIVE_RIGHT1);
 		rightMotor2 = new VictorSPX(RobotMap.DRIVE_RIGHT2);
 		rightMotor2.follow(rightMotor1);

@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
 import org.usfirst.frc.team7179.robot.commands.*;
-import org.usfirst.frc.team7179.robot.commands.Drive.*;
+import org.usfirst.frc.team7179.robot.commands.DriverControl.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 
 /**
@@ -29,6 +29,7 @@ import org.usfirst.frc.team7179.robot.subsystems.*;
 public class Robot extends TimedRobot {
 	//Subsystems
 	public static final Drivetrain drivetrain = new Drivetrain();
+	public static final Intake intake = new Intake();
 	public static final OI OI = new OI();
 
 	Command m_autonomousCommand;
