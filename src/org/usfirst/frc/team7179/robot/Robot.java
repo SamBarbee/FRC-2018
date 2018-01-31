@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
-import org.usfirst.frc.team7179.robot.commands.*;
-import org.usfirst.frc.team7179.robot.commands.DriverControl.*;
+import org.usfirst.frc.team7179.robot.commands.Autonomous.AutoLineAuto;
+import org.usfirst.frc.team7179.robot.commands.Drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 
 public class Robot extends TimedRobot {
@@ -18,15 +18,15 @@ public class Robot extends TimedRobot {
 	public static final Intake intake = new Intake();
 	public static final OI OI = new OI();
 
-	Command m_autonomousCommand;
+	Command AutonomousCommand;
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 	
 	public String gameData;
 
 	@Override
 	public void robotInit() {
-		AutonomousChooser.addDefault("Default Auto", new DriveWithJoystick());
-		//AutonomousChooser.addObject("Baseline", new BaselineAuto());
+		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
+		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 	}
 
@@ -50,12 +50,12 @@ public class Robot extends TimedRobot {
 			//Put right auto code here
 		}
 		
-		m_autonomousCommand = AutonomousChooser.getSelected();
+		AutonomousCommand = AutonomousChooser.getSelected();
 		 
 
 		// schedule the autonomous command (example)
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
+		if (AutonomousCommand != null) {
+			AutonomousCommand.start();
 		}
 	}
 	@Override
@@ -65,8 +65,8 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.cancel();
+		if (AutonomousCommand != null) {
+			AutonomousCommand.cancel();
 		}
 	}
 

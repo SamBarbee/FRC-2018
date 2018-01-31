@@ -1,4 +1,4 @@
-package org.usfirst.frc.team7179.robot.commands.DriverControl;
+package org.usfirst.frc.team7179.robot.commands.Intake;
 
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
