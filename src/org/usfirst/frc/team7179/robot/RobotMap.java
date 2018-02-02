@@ -1,7 +1,5 @@
 package org.usfirst.frc.team7179.robot;
 
-import edu.wpi.first.wpilibj.SPI;
-
 public class RobotMap {
 	public static final int PDP_ID = 61;
 	public static final int XBOX_CONTROLLER = 0;
@@ -25,7 +23,15 @@ public class RobotMap {
 	public static final int LIFT_LEFT = 4;
 	public static final int LIFT_RIGHT = 7;
 	
-	public static String autoLineTime = "Auto Line Time";
-	public static String autoLineSpeed = "Auto Line Speed";
+	public static double driveP = 1.0;
+	public static double driveI = 0.0;
+	public static double driveD = 0.0;
+	
+	public static double gyroP = 1.0;
+	public static double gyroI = 0.0;
+	public static double gyroD = 0.0;
+	
+	public static double autoLineTime = 3;
+	public static double autoLineSpeed = 0.35;
 
 }

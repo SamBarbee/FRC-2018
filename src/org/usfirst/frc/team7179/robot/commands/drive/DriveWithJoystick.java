@@ -1,4 +1,4 @@
-package org.usfirst.frc.team7179.robot.commands.Drive;
+package org.usfirst.frc.team7179.robot.commands.drive;
 
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -22,5 +22,4 @@ public class DriveWithJoystick extends Command {
 	protected void interrupted() {
 		Robot.drivetrain.setMotors(0, 0);
 	}
-
 }

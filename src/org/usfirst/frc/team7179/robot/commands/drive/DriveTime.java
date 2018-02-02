@@ -1,7 +1,6 @@
-package org.usfirst.frc.team7179.robot.commands.Drive;
+package org.usfirst.frc.team7179.robot.commands.drive;
 
 import org.usfirst.frc.team7179.robot.Robot;
-
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -24,7 +23,7 @@ public class DriveTime extends Command {
 	}
 	@Override
 	protected void execute() {
-		Robot.drivetrain.driveStraightGyro(speed);
+		Robot.drivetrain.setMotors(1,1);
 	}
 	@Override
 	protected boolean isFinished() {

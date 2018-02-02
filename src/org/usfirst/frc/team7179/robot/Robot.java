@@ -8,9 +8,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
-import org.usfirst.frc.team7179.robot.commands.Autonomous.AutoLineAuto;
-import org.usfirst.frc.team7179.robot.commands.Drive.*;
+import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
+import org.usfirst.frc.team7179.robot.commands.drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
+import org.usfirst.frc.team7179.robot.subsystems.drive.Drivetrain;
 
 public class Robot extends TimedRobot {
 	//Subsystems

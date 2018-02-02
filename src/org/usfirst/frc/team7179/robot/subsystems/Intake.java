@@ -1,7 +1,7 @@
 package org.usfirst.frc.team7179.robot.subsystems;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
-import org.usfirst.frc.team7179.robot.commands.Intake.IntakeWithJoystick;
+import org.usfirst.frc.team7179.robot.commands.intake.IntakeCube;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
@@ -17,7 +17,7 @@ public class Intake extends Subsystem{
 		rightMotor.follow(leftMotor);
 	}
 	protected void initDefaultCommand(){
-		setDefaultCommand(new IntakeWithJoystick());
+		setDefaultCommand(new IntakeCube());
 	}
 	public void setMotors (double power) {
 		leftMotor.set(ControlMode.PercentOutput, power);

@@ -1,17 +1,17 @@
-package org.usfirst.frc.team7179.robot.commands.Intake;
+package org.usfirst.frc.team7179.robot.commands.intake;
 
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class IntakeWithJoystick extends Command{
-	public IntakeWithJoystick() {
+public class IntakeCube extends Command{
+	public IntakeCube() {
 		requires(Robot.intake);
 	}
 	@Override
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.intake.setMotors(Robot.OI.getIntakeSpeed());
+		Robot.intake.setMotors(1);
 	}
 	protected boolean isFinished() {
 		return false;
