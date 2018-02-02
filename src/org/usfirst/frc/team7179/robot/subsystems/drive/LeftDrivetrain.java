@@ -13,7 +13,7 @@ public class LeftDrivetrain extends PIDSubsystem {
 	
 	private TalonSRX motor1;
 	private VictorSPX motor2;
-	private Encoder encoder = new Encoder(RobotMap.LEFT_ENCODER_A,RobotMap.LEFT_ENCODER_B);
+	Encoder encoder = new Encoder(RobotMap.LEFT_ENCODER_A,RobotMap.LEFT_ENCODER_B);
 	
 	public LeftDrivetrain(){
         super("Left DriveTrain", RobotMap.driveP, RobotMap.driveI, RobotMap.driveD);

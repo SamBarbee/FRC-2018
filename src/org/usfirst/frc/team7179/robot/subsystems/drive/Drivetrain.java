@@ -37,6 +37,10 @@ public class Drivetrain extends PIDSubsystem{
 	public void resetGyro() {
 		gyro.reset();
 	}
+	 public void resetEncoders() {
+        leftDrive.encoder.reset();
+        rightDrive.encoder.reset();
+    }
 
 	@Override
 	protected double returnPIDInput() {
