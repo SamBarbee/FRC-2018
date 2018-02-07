@@ -23,7 +23,7 @@ public class DriveTime extends Command {
 	}
 	@Override
 	protected void execute() {
-		Robot.drivetrain.setMotors(1,1);
+		Robot.drivetrain.setMotors(speed,speed);
 	}
 	@Override
 	protected boolean isFinished() {
