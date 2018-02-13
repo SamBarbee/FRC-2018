@@ -9,11 +9,12 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Intake extends Subsystem{
+public class Shooter extends Subsystem{
 	private VictorSPX leftMotor, rightMotor;
-	public Intake() {
-		leftMotor  = new VictorSPX(RobotMap.INTAKE_LEFT);
-		rightMotor = new VictorSPX(RobotMap.INTAKE_RIGHT);
+	public Shooter() {
+		leftMotor  = new VictorSPX(RobotMap.SHOOTER_LEFT);
+		rightMotor = new VictorSPX(RobotMap.SHOOTER_RIGHT);
+		rightMotor.setInverted(true);
 	}
 	protected void initDefaultCommand(){
 		setDefaultCommand(new StopIntake());

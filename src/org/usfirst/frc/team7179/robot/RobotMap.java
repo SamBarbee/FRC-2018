@@ -20,8 +20,8 @@ public class RobotMap {
 	public static final int SHOOTER_LEFT = 4;
 	public static final int SHOOTER_RIGHT = 7;
 	
-	public static final int LIFT_LEFT = 4;
-	public static final int LIFT_RIGHT = 7;
+	public static final int LIFT_LEFT = 3;
+	public static final int LIFT_RIGHT = 8;
 	
 	public static double driveP = 1.0;
 	public static double driveI = 0.0;

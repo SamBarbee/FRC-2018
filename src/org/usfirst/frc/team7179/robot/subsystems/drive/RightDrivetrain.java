@@ -23,7 +23,7 @@ public class RightDrivetrain extends PIDSubsystem {
 		motor2.follow(motor1);		
     }
 	public void setMotors(double power) {
-		motor1.set(ControlMode.PercentOutput, power);
+		motor1.set(ControlMode.PercentOutput, -power);
 	}
 	public void stopMotors() {
 		motor1.set(ControlMode.PercentOutput, 0);

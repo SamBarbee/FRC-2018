@@ -17,6 +17,8 @@ public class Robot extends TimedRobot {
 	//Subsystems
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final Intake intake = new Intake();
+	public static final Shooter shooter = new Shooter();
+	public static final Lift lift = new Lift();
 	public static final OI OI = new OI();
 
 	Command AutonomousCommand;
@@ -29,7 +31,7 @@ public class Robot extends TimedRobot {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
-	}
+	};
 
 	@Override
 	public void disabledInit() {
