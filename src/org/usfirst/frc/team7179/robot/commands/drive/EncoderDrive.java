@@ -14,9 +14,7 @@ public class EncoderDrive extends Command {
     }
 
     public void execute(){
-        Robot.drivetrain.getPIDController().disable(); //Disable Gyro PID
-        Robot.drivetrain.enableEncoderPID();
-        Robot.drivetrain.setSetpointEncoderDrivePID(setpoint);
+        //Robot.drivetrain.setM
     }
 
     @Override
