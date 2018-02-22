@@ -28,6 +28,8 @@ public class RobotMap {
 	public static double autoLineSpeed = 0.35;
 
 	public static int talonTimeoutMs = 10;
+	public static int talonCruise = 300;
+	public static int talonAccel = 2000;
 	
 	public static int RightSidePID = 0;
 	public static int LeftSidePID = 1;

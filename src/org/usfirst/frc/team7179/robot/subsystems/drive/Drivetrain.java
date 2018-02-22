@@ -12,15 +12,15 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Drivetrain extends Subsystem{
 	
-	public LeftDrivetrain leftDrive;
-	public RightDrivetrain rightDrive;
+	public DrivetrainSide leftDrive;
+	public DrivetrainSide rightDrive;
 	
 	//ADXRS450_Gyro gyro;
 	
 	public Drivetrain() {
 		
-		leftDrive = new LeftDrivetrain();
-		rightDrive = new RightDrivetrain();
+		leftDrive = new DrivetrainSide(RobotMap.DRIVE_LEFT1,RobotMap.DRIVE_LEFT2,RobotMap.LeftSidePID,false,false);
+		rightDrive = new DrivetrainSide(RobotMap.DRIVE_RIGHT1,RobotMap.DRIVE_RIGHT2,RobotMap.RightSidePID,true,false);
 		//gyro = new ADXRS450_Gyro();
 		
 	}
