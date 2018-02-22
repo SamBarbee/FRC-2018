@@ -1,8 +1,7 @@
 package org.usfirst.frc.team7179.robot.subsystems;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
-import org.usfirst.frc.team7179.robot.commands.intake.IntakeCube;
-import org.usfirst.frc.team7179.robot.commands.intake.StopIntake;
+import org.usfirst.frc.team7179.robot.commands.intake.RunIntake;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
@@ -16,7 +15,7 @@ public class Intake extends Subsystem{
 		rightMotor = new VictorSPX(RobotMap.INTAKE_RIGHT);
 	}
 	protected void initDefaultCommand(){
-		setDefaultCommand(new StopIntake());
+		setDefaultCommand(new RunIntake(0));
 	}
 	public void setMotors (double power) {
 		leftMotor.set(ControlMode.PercentOutput, power);

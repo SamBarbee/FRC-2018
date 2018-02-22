@@ -1,9 +1,7 @@
 package org.usfirst.frc.team7179.robot.subsystems;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
-import org.usfirst.frc.team7179.robot.commands.intake.IntakeCube;
-import org.usfirst.frc.team7179.robot.commands.intake.StopIntake;
-import org.usfirst.frc.team7179.robot.commands.lift.StopLift;
+import org.usfirst.frc.team7179.robot.commands.lift.RunLift;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -19,7 +17,7 @@ public class Lift extends Subsystem{
 		motor2 = new VictorSPX(RobotMap.LIFT_RIGHT);
 	}
 	protected void initDefaultCommand(){
-		setDefaultCommand(new StopLift());
+		setDefaultCommand(new RunLift(0.0));
 	}
 	public void setMotors (double power) {
 		motor1.set(ControlMode.PercentOutput, power);

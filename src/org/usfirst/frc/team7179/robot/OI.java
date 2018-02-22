@@ -6,14 +6,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team7179.robot.commands.intake.IntakeCube;
-import org.usfirst.frc.team7179.robot.commands.intake.OutCube;
-import org.usfirst.frc.team7179.robot.commands.intake.StopIntake;
-import org.usfirst.frc.team7179.robot.commands.lift.LiftDown;
-import org.usfirst.frc.team7179.robot.commands.lift.LiftHoldDown;
-import org.usfirst.frc.team7179.robot.commands.lift.LiftHoldUp;
-import org.usfirst.frc.team7179.robot.commands.lift.LiftUp;
-import org.usfirst.frc.team7179.robot.commands.lift.StopLift;
+import org.usfirst.frc.team7179.robot.commands.intake.RunIntake;
+import org.usfirst.frc.team7179.robot.commands.lift.RunLift;
 
 public class OI {
 	private XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
@@ -33,21 +27,21 @@ public class OI {
 	JoystickButton rightBump = new JoystickButton(xboxController, 6);
 	
 	
-	rightBump.whenPressed(new IntakeCube());
-	leftBump.whenPressed(new OutCube());
+	rightBump.whenPressed(new RunIntake(1));
+	leftBump.whenPressed(new RunIntake(-1));
 	
-	rightBump.whenReleased(new StopIntake());
-	leftBump.whenReleased(new StopIntake());
+	rightBump.whenReleased(new RunIntake(0));
+	leftBump.whenReleased(new RunIntake(0));
 	
-	upRightPad.whenPressed(new LiftUp());
-	downRightPad.whenPressed(new LiftDown());
-	upLeftPad.whenPressed(new LiftHoldUp());
-	downLeftPad.whenPressed(new LiftHoldDown());
+	upRightPad.whenPressed(new RunLift(0.65));
+	downRightPad.whenPressed(new RunLift(-0.75));
+	upLeftPad.whenPressed(new RunLift(0.2));
+	downLeftPad.whenPressed(new RunLift(-0.2));
 
-	upRightPad.whenReleased(new StopLift());
-	downRightPad.whenReleased(new StopLift());
-	upLeftPad.whenReleased(new StopLift());
-	downLeftPad.whenReleased(new StopLift());
+	upRightPad.whenReleased(new RunLift(0.0));
+	downRightPad.whenReleased(new RunLift(0.0));
+	upLeftPad.whenReleased(new RunLift(0.0));
+	downLeftPad.whenReleased(new RunLift(0.0));
 	
 	
 	}
