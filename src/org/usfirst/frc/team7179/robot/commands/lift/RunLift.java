@@ -4,7 +4,7 @@ import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class RunLift extends Command{
-	private double power;
+	private double power = 0;
 	public RunLift() {
 		requires(Robot.lift);
 	}

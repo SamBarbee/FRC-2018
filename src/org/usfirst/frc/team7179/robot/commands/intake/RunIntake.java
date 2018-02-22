@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class RunIntake extends Command{
-	private double power;
+	private double power = 0;
 	
 	public RunIntake() {
 		requires(Robot.intake);
