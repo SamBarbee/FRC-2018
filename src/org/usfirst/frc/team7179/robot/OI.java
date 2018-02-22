@@ -10,6 +10,8 @@ import org.usfirst.frc.team7179.robot.commands.intake.IntakeCube;
 import org.usfirst.frc.team7179.robot.commands.intake.OutCube;
 import org.usfirst.frc.team7179.robot.commands.intake.StopIntake;
 import org.usfirst.frc.team7179.robot.commands.lift.LiftDown;
+import org.usfirst.frc.team7179.robot.commands.lift.LiftHoldDown;
+import org.usfirst.frc.team7179.robot.commands.lift.LiftHoldUp;
 import org.usfirst.frc.team7179.robot.commands.lift.LiftUp;
 import org.usfirst.frc.team7179.robot.commands.lift.StopLift;
 
@@ -24,6 +26,9 @@ public class OI {
 	JoystickButton upRightPad = new JoystickButton(xboxController,2);
 	JoystickButton downRightPad = new JoystickButton(xboxController,4);
 	
+	JoystickButton upLeftPad = new JoystickButton(xboxController,1);
+	JoystickButton downLeftPad = new JoystickButton(xboxController,3);
+	
 	JoystickButton leftBump = new JoystickButton(xboxController, 5);
 	JoystickButton rightBump = new JoystickButton(xboxController, 6);
 	
@@ -36,9 +41,13 @@ public class OI {
 	
 	upRightPad.whenPressed(new LiftUp());
 	downRightPad.whenPressed(new LiftDown());
+	upLeftPad.whenPressed(new LiftHoldUp());
+	downLeftPad.whenPressed(new LiftHoldDown());
 
 	upRightPad.whenReleased(new StopLift());
 	downRightPad.whenReleased(new StopLift());
+	upLeftPad.whenReleased(new StopLift());
+	downLeftPad.whenReleased(new StopLift());
 	
 	
 	}

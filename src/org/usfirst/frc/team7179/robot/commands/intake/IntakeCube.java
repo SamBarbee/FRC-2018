@@ -6,24 +6,20 @@ import edu.wpi.first.wpilibj.command.Command;
 public class IntakeCube extends Command{
 	public IntakeCube() {
 		requires(Robot.intake);
-		requires(Robot.shooter);
-	}
+			}
 	@Override
 	protected void initialize() {
 	}
 	public void execute() {
 		Robot.intake.setMotors(1);
-		Robot.shooter.setMotors(0.75);
 	}
 	protected boolean isFinished() {
 		return false;
 	}
 	protected void end() {
 		Robot.intake.setMotors(0);
-		Robot.shooter.setMotors(0);
-	}
+			}
 	protected void interrupted() {
 		Robot.intake.setMotors(0);
-		Robot.shooter.setMotors(0);
 	}
 }

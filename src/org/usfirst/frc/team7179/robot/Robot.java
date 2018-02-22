@@ -12,12 +12,12 @@ import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
 import org.usfirst.frc.team7179.robot.commands.drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 import org.usfirst.frc.team7179.robot.subsystems.drive.Drivetrain;
+import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends TimedRobot {
 	//Subsystems
 	public static final Drivetrain drivetrain = new Drivetrain();
 	public static final Intake intake = new Intake();
-	public static final Shooter shooter = new Shooter();
 	public static final Lift lift = new Lift();
 	public static final OI OI = new OI();
 
@@ -31,6 +31,8 @@ public class Robot extends TimedRobot {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
+		
+		CameraServer.getInstance().startAutomaticCapture();
 	};
 
 	@Override
@@ -45,14 +47,14 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if(gameData.charAt(0) == 'L')
-		{
-			//Put left auto code here
-		} else {
-			//Put right auto code here
-		}
-		
+//		gameData = DriverStation.getInstance().getGameSpecificMessage();
+//		if(gameData.charAt(0) == 'L')
+//		{
+//			//Put left auto code here
+//		} else {
+//			//Put right auto code here
+//		}
+//		
 		AutonomousCommand = AutonomousChooser.getSelected();
 		 
 

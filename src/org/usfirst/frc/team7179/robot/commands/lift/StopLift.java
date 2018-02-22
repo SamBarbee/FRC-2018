@@ -11,7 +11,7 @@ public class StopLift extends Command{
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.lift.setMotors(0);
+		Robot.lift.setMotors(0.0);
 	}
 	protected boolean isFinished() {
 		return false;

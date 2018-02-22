@@ -13,20 +13,20 @@ public class TurnToAngle extends Command {
     }
 
     public void execute(){
-        Robot.drivetrain.disableEncoderPID();
+       // Robot.drivetrain.disableEncoderPID();
 
-        Robot.drivetrain.getPIDController().enable();
-        Robot.drivetrain.getPIDController().setSetpoint(setpoint);
+//        Robot.drivetrain.getPIDController().enable();
+//        Robot.drivetrain.getPIDController().setSetpoint(setpoint);
     }
 
     @Override
     protected boolean isFinished() {
-        return Robot.drivetrain.getPIDController().onTarget();
+        return /*Robot.drivetrain.getPIDController().onTarget();*/ true;
     }
 
     @Override
     protected void end() {
-        Robot.drivetrain.getPIDController().disable();
+        //Robot.drivetrain.getPIDController().disable();
         Robot.drivetrain.resetGyro();
     }
 }

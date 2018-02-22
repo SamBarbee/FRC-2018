@@ -3,15 +3,15 @@ package org.usfirst.frc.team7179.robot.commands.lift;
 import org.usfirst.frc.team7179.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class LiftDown extends Command{
-	public LiftDown() {
+public class LiftHoldDown extends Command{
+	public LiftHoldDown() {
 		requires(Robot.lift);
 	}
 	@Override
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.lift.setMotors(-0.75);
+		Robot.lift.setMotors(-0.2);
 	}
 	protected boolean isFinished() {
 		return false;

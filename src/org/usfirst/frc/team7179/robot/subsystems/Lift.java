@@ -6,21 +6,23 @@ import org.usfirst.frc.team7179.robot.commands.intake.StopIntake;
 import org.usfirst.frc.team7179.robot.commands.lift.StopLift;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Lift extends Subsystem{
-	private VictorSPX leftMotor, rightMotor;
+	TalonSRX motor1;
+	VictorSPX motor2;
 	public Lift() {
-		leftMotor  = new VictorSPX(RobotMap.LIFT_LEFT);
-		rightMotor = new VictorSPX(RobotMap.LIFT_RIGHT);
+		motor1 = new TalonSRX(RobotMap.LIFT_LEFT);
+		motor2 = new VictorSPX(RobotMap.LIFT_RIGHT);
 	}
 	protected void initDefaultCommand(){
 		setDefaultCommand(new StopLift());
 	}
 	public void setMotors (double power) {
-		leftMotor.set(ControlMode.PercentOutput, power);
-		rightMotor.set(ControlMode.PercentOutput, power);
+		motor1.set(ControlMode.PercentOutput, power);
+		motor2.set(ControlMode.PercentOutput, power);
 	}
 }

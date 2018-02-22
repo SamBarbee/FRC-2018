@@ -11,7 +11,7 @@ public class LiftUp extends Command{
 	protected void initialize() {
 	}
 	public void execute() {
-		Robot.lift.setMotors(1);
+		Robot.lift.setMotors(0.65);
 	}
 	protected boolean isFinished() {
 		return false;
