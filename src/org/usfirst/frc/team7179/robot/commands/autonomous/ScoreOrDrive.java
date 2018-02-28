@@ -18,6 +18,7 @@ public class ScoreOrDrive extends CommandGroup {
 		
 		
 		RobotMap.talonCruise = 700;
+		RobotMap.talonAccel = 1000;
 		
 		addParallel(new RunLift(0.3));
 		addSequential(new EncoderDrive(Robot.inchesToTicks(RobotMap.walltoMidSwitch)));

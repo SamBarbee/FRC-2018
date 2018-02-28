@@ -11,7 +11,7 @@ public class AutoLineAuto extends CommandGroup {
 		double distance = (1024/(RobotMap.wheelDiameter * Math.PI))*RobotMap.autoLineDist;
 		int oldTalonCruise = RobotMap.talonCruise;
 		int oldTalonAccel = RobotMap.talonAccel;
-		RobotMap.talonCruise = 700;
+		RobotMap.talonCruise = 300;
 		addParallel(new RunLift(0.3));
 		addSequential(new EncoderDrive(distance));
 		RobotMap.talonCruise = oldTalonCruise;

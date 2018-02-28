@@ -1,8 +1,6 @@
 package org.usfirst.frc.team7179.robot;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
-
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -12,7 +10,7 @@ import org.usfirst.frc.team7179.robot.commands.lift.RunLift;
 public class OI {
 	private XboxController xboxController = new XboxController(RobotMap.XBOX_CONTROLLER);
 	
-	private Hand rightHand = Hand.kRight; private Hand leftHand  = Hand.kLeft;
+	private Hand rightHand = Hand.kRight; //private Hand leftHand  = Hand.kLeft;
 	private double leftDriverSpeed, rightDriverSpeed;
 	 
 	public OI() {

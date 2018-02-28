@@ -6,8 +6,6 @@ import org.usfirst.frc.team7179.robot.commands.drive.DriveWithJoystick;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.sensors.PigeonIMU;
 
-import edu.wpi.first.wpilibj.ADXRS450_Gyro;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -48,12 +46,12 @@ public class Drivetrain extends Subsystem{
 	public void logEncoderData() {
 		SmartDashboard.putNumber("Right Position", rightDrive.motor1.getSelectedSensorPosition(0));
 		SmartDashboard.putNumber("Right Velocity", rightDrive.motor1.getSelectedSensorVelocity(0));
-		//SmartDashboard.putNumber("Right Setpoint", rightDrive.motor1.getClosedLoopTarget(0));
+		SmartDashboard.putNumber("Right Setpoint", rightDrive.motor1.getClosedLoopTarget(0));
 		SmartDashboard.putNumber("Right Error", rightDrive.motor1.getClosedLoopError(0));
 		
 		SmartDashboard.putNumber("Left Position", leftDrive.motor1.getSelectedSensorPosition(0));
 		SmartDashboard.putNumber("Left Velocity", leftDrive.motor1.getSelectedSensorVelocity(0));
-		//SmartDashboard.putNumber("Left Setpoint", leftDrive.motor1.getClosedLoopTarget(0));
+		SmartDashboard.putNumber("Left Setpoint", leftDrive.motor1.getClosedLoopTarget(0));
 		SmartDashboard.putNumber("Left Error", leftDrive.motor1.getClosedLoopError(0));
 	}
 
