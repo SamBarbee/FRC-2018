@@ -34,9 +34,9 @@ public class OI {
 	leftBump.whenReleased(new RunIntake(0));
 	
 	upRightPad.whenPressed(new RunLift(0.65));
-	downRightPad.whenPressed(new RunLift(-0.75));
-	upLeftPad.whenPressed(new RunLift(0.2));
-	downLeftPad.whenPressed(new RunLift(-0.2));
+	downRightPad.whenPressed(new RunLift(-0.8));
+	upLeftPad.whenPressed(new RunLift(0.3));
+	downLeftPad.whenPressed(new RunLift(-0.3));
 
 	upRightPad.whenReleased(new RunLift(0.0));
 	downRightPad.whenReleased(new RunLift(0.0));

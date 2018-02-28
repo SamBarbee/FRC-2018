@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
 import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
+import org.usfirst.frc.team7179.robot.commands.autonomous.ScoreOrDrive;
 import org.usfirst.frc.team7179.robot.commands.drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 import org.usfirst.frc.team7179.robot.subsystems.drive.Drivetrain;
@@ -21,6 +22,8 @@ public class Robot extends TimedRobot {
 	public static final Lift lift = new Lift();
 	public static final OI OI = new OI();
 
+	public static enum Side {left,right,center};
+	
 	Command AutonomousCommand;
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 	
@@ -30,7 +33,8 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
-		AutonomousChooser.addObject("Start Left", new AutoLineAuto());
+		AutonomousChooser.addObject("Start Left", new ScoreOrDrive(Side.left));
+		AutonomousChooser.addObject("Start Right", new ScoreOrDrive(Side.right));
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 		
 		CameraServer.getInstance().startAutomaticCapture();
