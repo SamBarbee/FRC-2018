@@ -4,6 +4,7 @@ import org.usfirst.frc.team7179.robot.RobotMap;
 import org.usfirst.frc.team7179.robot.commands.drive.DriveWithJoystick;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.sensors.PigeonIMU;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
@@ -14,15 +15,15 @@ public class Drivetrain extends Subsystem{
 	
 	public DrivetrainSide leftDrive;
 	public DrivetrainSide rightDrive;
+	public PigeonIMU pidgey;
 	
-	//ADXRS450_Gyro gyro;
 	
 	public Drivetrain() {
 		
 		leftDrive = new DrivetrainSide(RobotMap.DRIVE_LEFT1,RobotMap.DRIVE_LEFT2,RobotMap.LeftSidePID,false,false);
 		rightDrive = new DrivetrainSide(RobotMap.DRIVE_RIGHT1,RobotMap.DRIVE_RIGHT2,RobotMap.RightSidePID,true,false);
-		//gyro = new ADXRS450_Gyro();
-		
+		pidgey = new PigeonIMU(RobotMap.pidgeyAddress);
+
 	}
 	protected void initDefaultCommand(){
 		setDefaultCommand(new DriveWithJoystick());

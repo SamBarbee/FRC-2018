@@ -1,5 +1,7 @@
 package org.usfirst.frc.team7179.robot;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 public class RobotMap {
 	public static final int PDP_ID = 0;
 	public static final int XBOX_CONTROLLER = 0;
@@ -15,6 +17,8 @@ public class RobotMap {
 	public static final int LIFT_LEFT = 6;
 	public static final int LIFT_RIGHT = 3;
 	
+	public static int pidgeyAddress = 9;
+	
 	public static double driveF = 0.5;
 	public static double driveP = 0.6;
 	public static double driveI = 0.0;
@@ -24,13 +28,14 @@ public class RobotMap {
 	public static double gyroI = 0.0;
 	public static double gyroD = 0.0;
 	
-	public static double autoLineTime = 3;
-	public static double autoLineSpeed = 0.35;
-
 	public static int talonTimeoutMs = 10;
-	public static int talonCruise = 300;
+	public static int talonCruise = 500;
 	public static int talonAccel = 2000;
 	
 	public static int RightSidePID = 0;
 	public static int LeftSidePID = 1;
+	
+	public static double wheelDiameter = 6;
+	
+	public static double autoLineDist = 11*12;
 }

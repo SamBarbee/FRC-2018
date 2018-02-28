@@ -30,11 +30,11 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
+		AutonomousChooser.addObject("Start Left", new AutoLineAuto());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 		
 		CameraServer.getInstance().startAutomaticCapture();
 	};
-
 	@Override
 	public void disabledInit() {
 
@@ -47,18 +47,16 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
-//		gameData = DriverStation.getInstance().getGameSpecificMessage();
-//		if(gameData.charAt(0) == 'L')
-//		{
-//			//Put left auto code here
-//		} else {
-//			//Put right auto code here
-//		}
-//		
+		gameData = DriverStation.getInstance().getGameSpecificMessage();
+		if(gameData.charAt(0) == 'L')
+		{
+			//Put left auto code here
+		} else {
+			//Put right auto code here
+		}
+		
 		AutonomousCommand = AutonomousChooser.getSelected();
 		 
-
-		// schedule the autonomous command (example)
 		if (AutonomousCommand != null) {
 			AutonomousCommand.start();
 		}

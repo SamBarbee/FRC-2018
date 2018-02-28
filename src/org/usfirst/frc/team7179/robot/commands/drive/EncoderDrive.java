@@ -34,7 +34,6 @@ public class EncoderDrive extends Command {
     protected void end() {
     	Robot.drivetrain.leftDrive.motor1.setSelectedSensorPosition(0, 0, 10);
     	Robot.drivetrain.rightDrive.motor1.setSelectedSensorPosition(0, 0, 10);
-    	Robot.drivetrain.leftDrive.motor1.getControlMode();
     	SmartDashboard.putString("Encoder", "done");
     	Robot.drivetrain.resetEncoders();
     	Robot.drivetrain.logEncoderData();
