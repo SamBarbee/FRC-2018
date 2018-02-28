@@ -27,8 +27,6 @@ public class Robot extends TimedRobot {
 	Command AutonomousCommand;
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 	
-	public String gameData;
-
 	@Override
 	public void robotInit() {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
@@ -51,14 +49,6 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void autonomousInit() {
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		if(gameData.charAt(0) == 'L')
-		{
-			//Put left auto code here
-		} else {
-			//Put right auto code here
-		}
-		
 		AutonomousCommand = AutonomousChooser.getSelected();
 		 
 		if (AutonomousCommand != null) {
@@ -84,5 +74,12 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void testPeriodic() {
+	}
+	
+	public static double inchesToTicks(double inches) {
+		return (1024/(RobotMap.wheelDiameter * Math.PI))*inches;
+	}
+	public static String getGameData() {
+		return DriverStation.getInstance().getGameSpecificMessage();
 	}
 }
