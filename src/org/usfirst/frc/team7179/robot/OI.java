@@ -26,7 +26,7 @@ public class OI {
 	
 	
 	rightBump.whenPressed(new RunIntake(1));
-	leftBump.whenPressed(new RunIntake(-1));
+	leftBump.whenPressed(new RunIntake(-0.9));
 	
 	rightBump.whenReleased(new RunIntake(0));
 	leftBump.whenReleased(new RunIntake(0));

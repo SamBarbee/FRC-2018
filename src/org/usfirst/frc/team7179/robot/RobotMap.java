@@ -35,8 +35,5 @@ public class RobotMap {
 	
 	public static double wheelDiameter = 6;
 	
-	//auto distances
-	
-	public static double autoLineDist = 132; //inches
-	public static double walltoMidSwitch = 144; //inches
+	public static double autoLineDist = 11*12;
 }

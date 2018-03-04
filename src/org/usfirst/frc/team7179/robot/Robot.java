@@ -9,7 +9,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
 import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
-import org.usfirst.frc.team7179.robot.commands.autonomous.ScoreOrDrive;
+import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreLeft;
+import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreRight;
 import org.usfirst.frc.team7179.robot.commands.drive.*;
 import org.usfirst.frc.team7179.robot.subsystems.*;
 import org.usfirst.frc.team7179.robot.subsystems.drive.Drivetrain;
@@ -27,12 +28,14 @@ public class Robot extends TimedRobot {
 	Command AutonomousCommand;
 	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
 	
+	public static String gameData;
+
 	@Override
 	public void robotInit() {
 		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
-		AutonomousChooser.addObject("Start Left", new ScoreOrDrive(Side.left));
-		AutonomousChooser.addObject("Start Right", new ScoreOrDrive(Side.right));
+		AutonomousChooser.addObject("Score Switch - Left Start", new SwitchScoreLeft());
+		AutonomousChooser.addObject("Score Switch - Right Start", new SwitchScoreRight());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 		
 		CameraServer.getInstance().startAutomaticCapture();
@@ -44,11 +47,14 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledPeriodic() {
+		gameData = DriverStation.getInstance().getGameSpecificMessage();
 		Scheduler.getInstance().run();
 	}
 
 	@Override
 	public void autonomousInit() {
+		gameData = DriverStation.getInstance().getGameSpecificMessage();
+		
 		AutonomousCommand = AutonomousChooser.getSelected();
 		 
 		if (AutonomousCommand != null) {
@@ -74,12 +80,5 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void testPeriodic() {
-	}
-	
-	public static double inchesToTicks(double inches) {
-		return (1024/(RobotMap.wheelDiameter * Math.PI))*inches;
-	}
-	public static String getGameData() {
-		return DriverStation.getInstance().getGameSpecificMessage();
 	}
 }
