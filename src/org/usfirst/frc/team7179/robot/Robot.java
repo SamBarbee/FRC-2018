@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team7179.robot.OI;
+import org.usfirst.frc.team7179.robot.commands.autonomous.DynamicAuton;
 import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
+import org.usfirst.frc.team7179.robot.commands.autonomous.ScoreSideLeft;
 import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreLeft;
 import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreRight;
 import org.usfirst.frc.team7179.robot.commands.drive.*;
@@ -26,16 +28,17 @@ public class Robot extends TimedRobot {
 	public static enum Side {left,right,center};
 	
 	Command AutonomousCommand;
-	SendableChooser<Command> AutonomousChooser = new SendableChooser<>();
+	SendableChooser<DynamicAuton> AutonomousChooser = new SendableChooser<>();
 	
 	public static String gameData;
 
 	@Override
 	public void robotInit() {
-		AutonomousChooser.addDefault("Auto Disabled", new DriveWithJoystick());
+		AutonomousChooser.addDefault("Auto Disabled", null);
 		AutonomousChooser.addObject("Autoline", new AutoLineAuto());
 		AutonomousChooser.addObject("Score Switch - Left Start", new SwitchScoreLeft());
 		AutonomousChooser.addObject("Score Switch - Right Start", new SwitchScoreRight());
+		AutonomousChooser.addObject("ScoreSide - Right", new ScoreSideLeft());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 		
 		CameraServer.getInstance().startAutomaticCapture();
@@ -47,17 +50,16 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledPeriodic() {
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
+		//gameData = DriverStation.getInstance().getGameSpecificMessage();
 		Scheduler.getInstance().run();
 	}
 
 	@Override
 	public void autonomousInit() {
-		gameData = DriverStation.getInstance().getGameSpecificMessage();
-		
-		AutonomousCommand = AutonomousChooser.getSelected();
+		DynamicAuton builder = AutonomousChooser.getSelected();
 		 
-		if (AutonomousCommand != null) {
+		if (builder != null) {
+			AutonomousCommand = builder.build();
 			AutonomousCommand.start();
 		}
 	}
