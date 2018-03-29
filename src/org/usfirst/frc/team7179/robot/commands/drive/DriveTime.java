@@ -16,7 +16,6 @@ public class DriveTime extends Command {
 	}
 	@Override
 	protected void initialize() {
-		Robot.drivetrain.resetGyro();
 		timer = new Timer();
 		timer.reset();
 		timer.start();

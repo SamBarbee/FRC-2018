@@ -50,7 +50,6 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledPeriodic() {
-		//gameData = DriverStation.getInstance().getGameSpecificMessage();
 		Scheduler.getInstance().run();
 	}
 

@@ -2,7 +2,6 @@ package org.usfirst.frc.team7179.robot.commands.autonomous;
 
 import org.usfirst.frc.team7179.robot.RobotMap;
 import org.usfirst.frc.team7179.robot.commands.drive.DriveTime;
-import org.usfirst.frc.team7179.robot.commands.drive.EncoderDrive;
 import org.usfirst.frc.team7179.robot.commands.intake.RunIntake;
 import org.usfirst.frc.team7179.robot.commands.lift.RunLift;
 

@@ -30,8 +30,10 @@ public class RobotMap {
 	public static int talonCruise = 500;
 	public static int talonAccel = 1500;
 	
-	public static int RightSidePID = 0;
-	public static int LeftSidePID = 1;
+	//public static int RightSidePID = 0;
+	//public static int LeftSidePID = 1;
+	
+	public static final int DrivePID = 0;
 	
 	public static double wheelDiameter = 6;
 	
