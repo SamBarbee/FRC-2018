@@ -10,7 +10,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team7179.robot.OI;
 import org.usfirst.frc.team7179.robot.commands.autonomous.DynamicAuton;
 import org.usfirst.frc.team7179.robot.commands.autonomous.AutoLineAuto;
+import org.usfirst.frc.team7179.robot.commands.autonomous.Center2Cube;
 import org.usfirst.frc.team7179.robot.commands.autonomous.ScoreSideLeft;
+import org.usfirst.frc.team7179.robot.commands.autonomous.ScoreSideRight;
 import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreLeft;
 import org.usfirst.frc.team7179.robot.commands.autonomous.SwitchScoreRight;
 import org.usfirst.frc.team7179.robot.commands.drive.*;
@@ -39,6 +41,8 @@ public class Robot extends TimedRobot {
 		AutonomousChooser.addObject("Score Switch - Left Start", new SwitchScoreLeft());
 		AutonomousChooser.addObject("Score Switch - Right Start", new SwitchScoreRight());
 		AutonomousChooser.addObject("ScoreSide - Right", new ScoreSideLeft());
+		AutonomousChooser.addObject("ScoreSide - Left", new ScoreSideRight());
+		AutonomousChooser.addObject("Danktester", new Center2Cube());
 		SmartDashboard.putData("Auto mode", AutonomousChooser);
 		
 		CameraServer.getInstance().startAutomaticCapture();

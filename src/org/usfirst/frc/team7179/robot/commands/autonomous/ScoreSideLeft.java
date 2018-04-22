@@ -28,15 +28,17 @@ private class ScoreSideLeftCG extends CommandGroup {
 		int oldTalonAccel = RobotMap.talonAccel;
 		RobotMap.talonCruise = 300;
 		
+		addSequential(new WaitCommand(10));
+		
 		if(Robot.gameData.charAt(0) == 'R')
 		{
 			addParallel(new RunLift(0.3));
 			addSequential(new DriveTime(2.3,0.4));
-			addSequential(new WaitCommand(1));
-			addSequential(new TurnTime(0.4,0.35,1));
-			addSequential(new WaitCommand(1));
-			addSequential(new DriveTime(1,0.4));
 			addSequential(new WaitCommand(0.5));
+			addSequential(new TurnTime(0.4,0.35,1));
+			addSequential(new WaitCommand(0.5));
+			addSequential(new DriveTime(1,0.4));
+			addParallel(new DriveTime(1,0.2));
 			addParallel(new RunLift(-0.2));
 			addSequential(new WaitCommand(0.5));
 			addParallel(new RunIntake(-1));

@@ -29,10 +29,12 @@ private class SwitchScoreRightCG extends CommandGroup {
 		int oldTalonAccel = RobotMap.talonAccel;
 		RobotMap.talonCruise = 300;
 		
+		addSequential(new WaitCommand(10));
+		
 		if(Robot.gameData.charAt(0) == 'R')
 		{
 			addParallel(new RunLift(0.3));
-			addSequential(new DriveTime(1.9,0.4));
+			addSequential(new DriveTime(2.3,0.35));
 			addSequential(new WaitCommand(1));
 			addParallel(new RunLift(-0.2));
 			addSequential(new DriveTime(0.5,0.2));
@@ -42,13 +44,13 @@ private class SwitchScoreRightCG extends CommandGroup {
 			addSequential(new DriveTime(0.75,-0.25));
 		} else {
 			addParallel(new RunLift(0.3));
-			addSequential(new DriveTime(0.25,0.35));
+			addSequential(new DriveTime(0.3,0.35));
 			addSequential(new WaitCommand(0.3));
-			addSequential(new TurnTime(0.25,0.35,1));
+			addSequential(new TurnTime(0.375,0.35,1));
 			addSequential(new WaitCommand(0.3));
-			addSequential(new DriveTime(2.4,0.35));
+			addSequential(new DriveTime(2.5,0.35));
 			addSequential(new WaitCommand(0.3));
-			addSequential(new TurnTime(0.25,0.35,-1));
+			addSequential(new TurnTime(0.375,0.35,-1));
 			addSequential(new WaitCommand(0.3));
 			addSequential(new DriveTime(1,0.4));
 			addSequential(new WaitCommand(0.5));

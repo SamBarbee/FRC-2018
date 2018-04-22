@@ -20,9 +20,9 @@ public class RobotMap {
 	public static double driveF = 0.5;
 	public static double driveP = 0.6;
 	public static double driveI = 0.0;
-	public static double driveD = 0.0;
+	public static double driveD = 0.3;
 	
-	public static double gyroP = 0.1;
+	public static double gyroP = 0.2;
 	public static double gyroI = 0.0;
 	public static double gyroD = 0.01;
 	

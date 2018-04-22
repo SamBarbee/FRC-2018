@@ -51,8 +51,11 @@ public class Center2Cube extends DynamicAuton {
 				addParallel(new RunIntake(-1));
 				addSequential(new WaitCommand(0.3));
 				addParallel(new RunIntake(0));
+				
+				addSequential(new DriveArc(-40,70,true));
 	
 			} else {
+				
 				addParallel(new RunLift(0.3));
 				addSequential(new DriveArc(24,48,false));
 				addSequential(new DriveArc(60,120,true));
